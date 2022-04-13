@@ -1,7 +1,12 @@
 package com.company;
 
 
+import com.company.books.Author;
+import com.company.books.Book;
 import com.company.vehicle.*;
+import com.company.accounts.Account;
+
+import java.util.Scanner;
 
 public class Main {
 
@@ -13,14 +18,72 @@ public class Main {
         // from the user. The user doesn't need to how it was done, they only need to know that
         // it works.
 
-        Vehicle car = new Motorcycle();
-        car.startEngine(true);
+//        Vehicle car = new Motorcycle();
+//        car.startEngine(true);
+//
+//        System.out.println(TaskMenu.FILE.getFirstItem());
+//        System.out.println(FoodMenu.DESSERT);
 
-        System.out.println(TaskMenu.FILE.getFirstItem());
-        System.out.println(FoodMenu.DESSERT);
 
+//        Account joshua = new Account(2, "Joshua");
+//        Account gregory = new Account(4, "Gregory");
+//
+//        joshua.credit(2000);
+//        gregory.credit(1000);
+//
+//        joshua.transferMoney(gregory, 500);
+//
+//        System.out.println(joshua.getBalance());
+//        System.out.println(gregory.getBalance());
+
+        // Initialize scanner
+        Scanner scanner = new Scanner(System.in);
+
+        // prompt the user for author's name and age
+        System.out.print("Enter the author's name: ");
+        String authorName = scanner.next();
+        System.out.print("Enter the author's age: ");
+        int authorAge = scanner.nextInt();
+
+        Author fred = new Author(authorName, authorAge);
+
+        Author[] authors = new Author[] {fred};
+
+        // Book details
+        System.out.print("Enter the book's price: ");
+        int price = scanner.nextInt();
+        System.out.println("Enter the book's name: ");
+        String bookName = scanner.next();
+
+        Book book = new Book(bookName, authors, price);
+
+        System.out.println("The author(s) of the book: " + book.getName()+ " is/are " + book.getAuthors());
     }
 }
+// 25 mins
+// Write a class called Book that has the following fields:
+// name, authors, price
+// Write another class called Author that contains the following fields:
+// name, age, and the gender
+// Create a list of books and return the following output for each book
+// "The author(s) of the book `NAME_OF_BOOK` is/are: ------"
+
+
+// UML diagrams
+// Unified Modelling Language
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // 20 mins.
